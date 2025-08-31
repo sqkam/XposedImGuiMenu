@@ -12,6 +12,7 @@ set(DOBBY_BUILD_TEST OFF CACHE BOOL "Build test" FORCE)
 
 aux_source_directory(libraries/ImGui imgui-src)
 aux_source_directory(libraries/KittyMemory/KittyMemory kittymemory-src)
+aux_source_directory(libraries/xdl xdl-src)
 
 add_subdirectory(libraries/KittyMemory/Deps/keystone EXCLUDE_FROM_ALL)
 add_subdirectory(libraries/Dobby EXCLUDE_FROM_ALL)
@@ -23,8 +24,11 @@ add_library(
         SHARED
         ${imgui-src}
         ${kittymemory-src}
+        ${xdl-src}
         libraries/ImGui/backends/imgui_impl_opengl3.cpp
         libraries/ImGui/backends/imgui_impl_android.cpp
+        include/Il2CppHelper.cpp
+        include/Tools.cpp
         main.cpp
 )
 
@@ -37,6 +41,7 @@ include_directories(
         libraries/KittyMemory/KittyMemory
         libraries/KittyMemory/Deps/Keystone/include
         libraries/Dobby/include
+        libraries/xdl/include
         compiled_libs/curl/${CMAKE_ANDROID_ARCH_ABI}/include/curl
         compiled_libs/openssl/${CMAKE_ANDROID_ARCH_ABI}/include/openssl
 )

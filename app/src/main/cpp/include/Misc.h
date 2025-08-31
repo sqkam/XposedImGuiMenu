@@ -79,3 +79,10 @@ template<typename T> inline T &GetField(void *instance, uint64_t offset) {
 #define PATCH_SWITCH(offset, hex, boolean) patchOffset(g_il2cppBaseMap.startAddress + string2Offset(offset), hex, boolean)
 #define RESTORE(offset) patchOffset(string2Offset(offset), "", false)
 #define OFFSET(offset) (g_il2cppBaseMap.startAddress + string2Offset(offset))
+
+// IL2Cpp namespace implementation (placeholder - 待实现)
+namespace Il2Cpp {
+    void *GetMethodOffset(const char *image, const char *namespaze, const char *clazz, const char *name, int argsCount) {
+        return Il2CppHelper::GetMethodOffset(image, namespaze, clazz, name, argsCount);
+    }
+}

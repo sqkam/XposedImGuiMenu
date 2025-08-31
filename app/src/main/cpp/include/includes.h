@@ -31,8 +31,9 @@
 #include <android/log.h>
 
 // Custom external headers
-#include <BNM/Loading.hpp>
 #include <dobby.h>
+#include "Il2CppHelper.h"
+#include "Tools.h"
 #include <KittyInclude.hpp>
 #include <KittyMemory.hpp>
 #include <KittyScanner.hpp>
@@ -41,6 +42,19 @@
 #include <imgui_internal.h>
 #include <imgui_impl_opengl3.h>
 #include <imgui_impl_android.h>
+
+// Obfuscation macro (simple implementation)
+#define OBFUSCATE(str) str
+
+// IL2Cpp namespace declaration (similar to the reference project)
+namespace Il2Cpp {
+    void *GetMethodOffset(const char *image, const char *namespaze, const char *clazz, const char *name, int argsCount = 0);
+}
+
+// Using alias for easier access (like the reference project)
+using namespace Il2Cpp;
+
+// 移除BNM相关声明，直接使用Dobby
 
 // Internal headers
 #include "input.h"
