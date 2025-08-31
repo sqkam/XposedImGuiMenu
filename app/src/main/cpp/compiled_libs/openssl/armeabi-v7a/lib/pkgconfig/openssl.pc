@@ -1,0 +1,9 @@
+prefix=/home/sunil/Downloads/android-api-2/Temp/compile_zlib_openssl_curl_android/build/openssl/armeabi-v7a
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: OpenSSL
+Description: Secure Sockets Layer and cryptography libraries and tools
+Version: 3.4.0-dev
+Requires: libssl libcrypto

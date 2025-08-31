@@ -1,0 +1,11 @@
+prefix=/home/sunil/Downloads/android-api-2/Temp/compile_zlib_openssl_curl_android/build/openssl/x86_64
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: OpenSSL-libssl
+Description: Secure Sockets Layer and cryptography libraries
+Version: 3.4.0-dev
+Requires.private: libcrypto
+Libs: -L${libdir} -lssl
+Cflags: -I${includedir}

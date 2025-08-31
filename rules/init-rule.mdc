@@ -1,0 +1,12 @@
+---
+description:
+基于dump.cs实现功能
+frida 客户端地址192.168.2.25:27042
+python用 source frida_env/bin/activate，你帮我运行调试
+游戏包名是com.tencent.ngame.chty
+直接用frida 命令行执行js 而不是单独写一个python脚本
+改内存容易闪退，你要用hook的方式实现
+ndk 地址是/Users/sqkam/Library/Android/sdk/ndk/24.0.8215888，如果项目不是用这个版本的ndk要改成用这个
+globs:
+alwaysApply: true
+---
